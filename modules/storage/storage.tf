@@ -1,14 +1,11 @@
-resource "google_storage_bucket" "static" {
-  name          = "BUCKET_NAME"
-  location      = var.region
-  storage_class = var.storage_class
-
-  uniform_bucket_level_access = true
+resource "random_id" "prefix" {
+  byte_length = 8
 }
 
-resource "google_storage_bucket_object" "default" {
-  name         = "sample_file.txt"
-  source       = "~/terraform/sample_file.txt"
-  content_type = "text/plain"
-  bucket       = google_storage_bucket.static.id
+
+resource "google_storage_bucket" "storage-bucket" {
+  name          = "${var.bucket_name}-${random_id.prefix.hex}"
+  location      = var.gcp_region
+  force_destroy = true
+  uniform_bucket_level_access = true
 }
