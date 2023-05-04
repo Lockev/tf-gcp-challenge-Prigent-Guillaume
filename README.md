@@ -15,7 +15,6 @@
   - [File Names](#file-names)
   - [Parameter, Meta-parameter and Variable Naming](#parameter-meta-parameter-and-variable-naming)
   - [Resource Naming](#resource-naming)
-- [Policies as Data Sources](#policies-as-data-sources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
